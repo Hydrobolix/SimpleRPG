@@ -1739,7 +1739,7 @@ function gameState(player, enemy) {
 		combatInfo.innerHTML += "<br>You win! <br>";
 		combatInfo.innerHTML += "You earned " + eXP + " XP!";
 		combatInfo.scrollTop = combatInfo.scrollHeight;
-		player.xp += (eXP * 100);
+		player.xp += (eXP * 5);
 
 		player.levelUp();
 		startFunc();
