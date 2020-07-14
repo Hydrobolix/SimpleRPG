@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="description" content="SimpleRPG, a turn based rpg."/>
+		<title>SimpleRPG</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		
+		<style>
+			p {
+				white-space: pre;
+				margin-left: -70px;
+			}
+			
+			h4 {
+				color: navy;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="index.html">WIP (v0.2)</a></li>
+			<li role="presentation"><a href="help.html">Help</a></li>
+			<li role="presentation" class="active"><a href="log.html">Log</a></li>
+			<li role="presentation"><a href="game/index01.html">Game (v0.1)</a></li>
+		</ul>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - Current Plans</h4>
+			<p class="changes">
+			- Add audio
+
+			- Enemy skills/combat
+			- bossBS needs to be enabled after skills are done
+
+			- Gold
+			- Items
+			- Shop
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/13/17</h4>
+			<p class="changes">
+			- Fixed bossEntry error
+			- Cleaned up code, removing unnecessary comments
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/12/17</h4>
+			<p class="changes">
+			- Fixed the currentTurn error
+			- Changed Slime Mage to Skeleton Mage
+			- Added enemy avatars
+			- Need to fix bossEntry/bossWin
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/10/17</h4>
+			<p class="changes">
+			- Added avatars for player
+			- Need to change nightMage.jpg and beastRider.jpg to include Class
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/9/17</h4>
+			<p class="changes">
+			- Started adding images
+			- Continuing on redesign a bit
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/6/17</h4>
+			<p class="changes">
+			- Redesigned the interface (still in progress)
+			- Working on currentTurn error
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/5/17</h4>
+			<p class="changes">
+			- Changed the way the skills work by removing the "skills" button
+			- Started adding player/enemy avatars (need to download them)
+			- Added support for background images (inactive for now)
+			- Created help section
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/4/17</h4>
+			<p class="changes">
+			- Collected sources of images for the player/enemy avatars
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/3/17</h4>
+			<p class="changes">
+			- Completed rank1Classes skills
+			- Worked on site links a bit
+			- Adding log.html to this changelog iteration
+			- Used jshint to make minor fixes to some code
+			- Added support for enemy avatars
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/2/17</h4>
+			<p class="changes">
+			- Finished mercenary skills
+			- Finished martialArtist skills
+			- Finished heavyKnight skills
+			- Finished samurai skills
+			- Started Cavalier skills
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 10/1/17</h4>
+			<p class="changes">
+			- Finished maniac skills
+			- Started mercenary skills
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/30/17</h4>
+			<p class="changes">
+			- Started rest of rank1Classes skills classeas
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/29/17</h4>
+			<p class="changes">
+			- Continued darkMage skills
+			- Added more afflictions
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/28/17</h4>
+			<p class="changes">
+			- Fixed summon's name appearing in the summon area
+			- Finished scholar skills
+			- Started darkMage skills
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/27/17</h4>
+			<p class="changes">
+			- Base classes skill sets complete
+			- Removed avatarClass
+			- Added imgSrc for displaying the image's link and its source's name
+			- Started Scholar skills
+			- Added potential skills for the apprentice upgrades
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/26/17</h4>
+			<p class="changes">
+			- Worked on status afflictions (poisin, stun, confusion)
+			- Finished bandit skill set
+			- Started knight skill set
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/25/17</h4>
+			<p class="changes">
+			- Finished Apprentice skill set
+			- Started bandit skill set
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/24/17</h4>
+			<p class="changes">
+			- Finished implementing skill types
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/22/17</h4>
+			<p class="changes">
+			- Added temp skills
+			- Changed the way the program handles summon skills a bit
+				- Similar to temp in that a function is called
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/21/17</h4>
+			<p class="changes">
+			- Used jshint to make minor fixes to some code
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/19/17</h4>
+			<p class="changes">
+			- Reverted fire's mp cost back to normal
+			- Adjusted fire's damage ratio
+			- Adjusted summonSlime's stats
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/18/17</h4>
+			<p class="changes">
+			- Worked on skills a bit, being used on upgraded classes (need to add the skillSet to each upgraded Class)
+			- Fixed a bug where the player could use the skills in another base class
+			- Fixed a bug where reincarnation wouldn't allow you to learn skills from the class again
+			- Fixed damage calculations for normal and active skills
+			- Added additional skill option (damageType; should be either physical or magic)
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/16/17</h4>
+			<p class="changes">
+			- Fixed skill selections for the most part, should be working for the skills currently created
+			- Worked on summon skills, working for the most part
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/15/17</h4>
+			<p class="changes">
+			- Turns implemented, may update later
+			- Started adding skill information (skill format [end of page], skillbutton[Line: ~1050])
+			- Started skillSet information (skillSet format [end of page])
+				- Added apprenticeSkills() to apprentice base class
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/14/17</h4>
+			<p class="changes">
+			- Added rank2/eRank2 stats
+			- Added bossBS, disabled for now (when boss is about to die, event occurs) (potentially add after skills have been done)
+			- Simplified battle stats code (left sclasse of combat screen)
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/13/17</h4>
+			<p class="changes">
+			- Added reincarnation
+			- Added stats for reincarnation
+			- Added potential multiple attacks (depends on speed)
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/12/17</h4>
+			<p class="changes">
+			- Added enemy stats
+			- Added boss enemies
+			- Added boss enemy messages
+			- Modified chooseEnemy
+			- Rebalanced damage for stats
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/9/17</h4>
+			<p class="changes">
+			- Modified stats for each class (base, rank1, rank2)
+			- Added stat point allocation (+3, +5, +8)
+			- Added message for each classes' regular attack
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/8/17</h4>
+			<p class="changes">
+			- Added preliminary classes
+			- Fixed changing classes bug (wouldn't update stats to new class)
+			- simplified upgradeClasses code (use let in for loop instead of var, async issue)
+			- Renamed classes
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/7/17</h4>
+			<p class="changes">
+			- Fixed fight button double-click
+			- Added classes
+			- Added randomness to enemy select
+			- Adjusted stats and other numbers a bit
+			- Added image support for player avatar (needs more development)
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - (9/4/17 - 9/6/17) (created 9/23/17)</h4>
+			<p class="changes">
+			- Progress made to the game
+			- Created combat screen that displayed information
+			- Created player stats and enemy player stats
+			- Worked on classes a bit for both the player and enemy
+			</p>
+		</div>
+		
+		<div class="changelog">
+			<h4 class="logTitle">Changelog - 9/3/17 (created 9/23/17)</h4>
+			<p class="changes">
+			- Game started development
+			- Created a player with hp
+			- Created an enemy with hp
+			- Created a fight button
+				- Reduced enemy hp by a random amount, and then same to the player's hp
+			- Created win/lose screen
+			- Added level
+			- Added xp
+			- Added player stats (currently not working)
+			</p>
+		</div>
+	</body>
+</html>
