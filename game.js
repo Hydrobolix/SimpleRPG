@@ -789,7 +789,7 @@ var Enemy = function(uClass, level) {
 			this.atkmsg = "Enemy slammed into you dealing ";
 			this.xp = 10 * this.level;
 			
-			eImage.src = "images/enemy/slime.jpg";
+			eImage.src = "images/enemy/slime.JPG";
 			eImage.style.width = "375px";
 			eImage.style.height = "375px";
 			eImage.style.position = "absolute";
