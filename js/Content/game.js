@@ -1734,12 +1734,12 @@ function gameState(player, enemy) {
 		summon1.innerHTML = "";
 		var eXP = Math.floor(Math.random() * 30) + enemy.xp;
 		//xpEarned = eXP;
-		eXP *= 3;
+		//eXP *= 4;
 		
 		combatInfo.innerHTML += "<br>You win! <br>";
 		combatInfo.innerHTML += "You earned " + eXP + " XP!";
 		combatInfo.scrollTop = combatInfo.scrollHeight;
-		player.xp += (eXP);
+		player.xp += (eXP * 5);
 
 		player.levelUp();
 		startFunc();
