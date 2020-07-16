@@ -1430,8 +1430,9 @@ function combatScreen(enemy) {
 			playerAttack(player, enemy);
 		}
 		*/
-		if (firstTurn) {
-			combatInfo.innerHTML += "<br>Press spacebar after clicking an attack to continue attacking.</br></br>";	
+		if (firstTime) {
+			combatInfo.innerHTML += "<br>Press spacebar after clicking an attack to continue attacking.</br></br>";
+			firstTime = false;
 		}
 		combatInfo.innerHTML += "<br>Turn " + currentTurn++ + "<br>";
 		if (player.spd >= enemy.spd) {
