@@ -8,7 +8,6 @@ var combat = document.getElementById("combat");
 var combatInfo = document.getElementById("combatInfo");
 var atkBtn = document.getElementById("atk");
 var skillDesc = document.getElementById("skillDesc");
-var firstTime = true;
 
 menu.style.visibility = "hidden";
 atkBtn.style.visibility = "hidden";
@@ -1430,10 +1429,7 @@ function combatScreen(enemy) {
 			playerAttack(player, enemy);
 		}
 		*/
-		if (firstTime) {
-			combatInfo.innerHTML += "<br>Press spacebar after clicking an attack to continue attacking.</br></br>";
-			firstTime = false;
-		}
+		
 		combatInfo.innerHTML += "<br>Turn " + currentTurn++ + "<br>";
 		if (player.spd >= enemy.spd) {
 			
