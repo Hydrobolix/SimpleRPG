@@ -1735,7 +1735,7 @@ function gameState(player, enemy) {
 		summon1.innerHTML = "";
 		var eXP = Math.floor(Math.random() * 30) + enemy.xp;
 		//xpEarned = eXP;
-		eXP *= 6;
+		eXP *= 2.99; /*HD*/
 		
 		combatInfo.innerHTML += "<br>You win! <br>";
 		combatInfo.innerHTML += "You earned " + eXP + " XP!";
