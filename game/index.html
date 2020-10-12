@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+			<meta charset="utf-8"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta name="description" content="SimpleRPG, a turn based rpg."/>
+			<title>SimpleRPG v0.1</title>
+
+			<!-- Bootstrap 
+			<link href="../css/bootstrap.min.css" rel="stylesheet"/> -->
+
+			<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+
+			<style>
+				#combat {
+					width: 400px;
+					height: 200px;
+					border: 1px solid black;
+					float: left;
+
+				}
+				#combatInfo {
+					width: 400px;
+					height: 200px;
+					border: 1px solid black;
+					float: left;
+					overflow-y: scroll;
+				}
+				
+				#pImage {
+					<!-- width: 300px; -->
+					<!-- height: 300px; -->
+					position: absolute;
+					float: right;
+				}
+				
+				#pAvatar {
+					position: fixed;
+					
+					top: 6%;
+					left: 72%;
+				}
+				
+				#eAvatar {
+					position: fixed;
+					
+					left: 72%;
+					top: 58%;
+				}
+				
+				#imgSrc {
+					font-size: 10px;
+				}
+				
+				#eImgSrc {
+					font-size: 10px;
+				}
+				
+				#summon1 {
+					width: 200px;
+					height: 100px;
+					display: flex;
+					float: left;
+					//border: blue 1px solid;
+					margin-top: -100px;
+				}
+				
+				#tempSkill {
+					width: 200px;
+					height: 100px;
+					border: white 1px solid; 
+					margin-left: 800px;
+					margin-top: 100px;
+					overflow-y: auto;
+				}
+				
+				#combatOptions {
+					//margin-top: 200px;
+				}
+			</style>
+
+			<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+			<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+			<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+				<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+				<![endif]-->
+        </head>
+        <body>
+			<button id="start">SimpleRPG</button> 
+			<div id="pAvatar"> 
+				<img id = "pImage" src="" alt="Player Avatar"> 
+				<p id="imgSrc">Source: &nbsp;</p>
+			</div>
+			
+			<div id="eAvatar">
+				<img id="eImage" src="" alt="Enemy Avatar">
+				<p id="eImgSrc">Source: &nbsp;</p>
+			</div>
+			
+			<div id="char"></div>
+
+			<span id="changeClasses"></span>
+			<button id="choiceA"></button>
+			<button id="choiceB"></button>
+			<button id="choiceC"></button>
+			<div id="menu">
+				<button id="fight">Go Fight</button>
+				<button id="reInc">Reincarnate</button>
+			</div>
+
+			<div id="combat">
+				
+			</div>
+			<div id="combatInfo"></div>
+			<div>
+				<div id="summon1"></div>
+				<div id="tempSkill"></div>
+			</div>
+			<div id="combatOptions">
+				<button id="atk">Attack</button>
+				<button id="skillsBtn">Skills</button>
+			</div>
+			<div id="skillSelection"></div>
+			<div id="skillDesc">&nbsp;</div>
+			
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+					<script src="js/bootstrap.min.js"></script>
+			<script src="game.js"></script>
+        </body>
+</html>
