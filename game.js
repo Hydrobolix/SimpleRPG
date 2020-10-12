@@ -8,7 +8,6 @@ var combat = document.getElementById("combat");
 var combatInfo = document.getElementById("combatInfo");
 var atkBtn = document.getElementById("atk");
 var skillDesc = document.getElementById("skillDesc");
-var NotAnsemTheWise1 = document.getElementById();
 
 menu.style.visibility = "hidden";
 atkBtn.style.visibility = "hidden";
