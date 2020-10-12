@@ -53,7 +53,33 @@ eImage.style.position = "absolute";
 eImage.style.bottom = "0";
 eImgSrc.innerHTML = "";
 eImage.style.opacity = "0";
-		
+
+
+// Resizing images:
+var resizeImg = document.getElementById("resize");
+var imgToggle = 0;
+
+resizeImg.onclick = function () {
+    if (imgToggle == 0) {
+        pImage.style.width = "40%";
+        pImage.style.height = "40%";
+
+        eImage.style.width = "40%";
+        eImage.style.height = "40%";
+
+        imgToggle = 1;
+    } else {
+        pImage.style.width = "70%";
+        pImage.style.height = "70%";
+
+        eImage.style.width = "70%";
+        eImage.style.height = "70%";
+
+        imgToggle = 0;
+    }
+}
+
+
 /* backgroundImages */
 	var background = document.body;
 	background.style.backgroundImage = "url('background1.png')";
