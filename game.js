@@ -61,19 +61,19 @@ var imgToggle = 0;
 
 resizeImg.onclick = function () {
     if (imgToggle == 0) {
-        pImage.style.width = "40%";
-        pImage.style.height = "40%";
+        pImage.style.width = "20vw";
+        pImage.style.height = "20vh";
 
-        eImage.style.width = "40%";
-        eImage.style.height = "40%";
+        eImage.style.width = "20vw";
+        eImage.style.height = "20vh";
 
         imgToggle = 1;
     } else {
-        pImage.style.width = "70%";
-        pImage.style.height = "70%";
+        pImage.style.width = "100vw";
+        pImage.style.height = "100vh";
 
-        eImage.style.width = "70%";
-        eImage.style.height = "70%";
+        eImage.style.width = "100vw";
+        eImage.style.height = "100vh";
 
         imgToggle = 0;
     }
