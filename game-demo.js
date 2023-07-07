@@ -347,7 +347,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You clobbered your opponent for ";
 			banditSkillSet(player);
 			
-			pImage.src = "images/demo/player/base/bandit_portrait.png";
+			pImage.src = "images/demo/base/bandit_portrait.png";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -364,7 +364,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You pinged your opponent for ";
 			apprenticeSkillSet(player);
 			
-			pImage.src = "images/demo/player/base/Apprentice_Portrait.png";
+			pImage.src = "images/demo/base/Apprentice_Portrait.png";
 			pImage.style.width = "450px";
 			pImage.style.height = "350px";
 			pImage.style.position = "absolute";
@@ -381,7 +381,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You slashed your opponent for ";
 			knightSkillSet(player);
 			
-			pImage.src = "images/demo/player/base/knight_portrait.png";
+			pImage.src = "images/demo/base/knight_portrait.png";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
