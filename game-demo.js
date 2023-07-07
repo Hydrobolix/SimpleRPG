@@ -1,3 +1,168 @@
+function footerContent() {
+document.body.innerHTML +=
+
+"<!-- <input type=\"button\" value=\"PLAY\"  onclick=\"play()\">"
+  + "<input type=\"button\" value=\"STOP\"  onclick=\"stop()\">"
+  + "<audio id=\"audio\" src=\"beEasy.mp3\" ></audio> -->"
+  + "<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->"
+  + "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>"
+  + "<!-- Include all compiled plugins (below), or include individual files as needed -->"
+  + "<script src=\"js/bootstrap.min.js\"></script>";
+}
+
+function loadingScreen() {
+
+
+document.body.innerHTML += 
+
+"<div class=\"loadingAnimation\"> &nbsp;&nbsp;&nbsp;"
+  + "<div id=\"bouncer0\">&#x25CF;</div>"
+  + "<div id=\"bouncer1\">&#x25CF;</div>"
+  + "<div id=\"bouncer2\">&#x25CF;</div>"
+  + "<div id=\"loadingText\">LOADING</div>"
+  + "</div>"
+  + "<div class=\"loadToTitle\">Demo</div>";
+
+	if (document.body) {
+	setTimeout(fromLoadToTitle, 3000);
+	//setTimeout(showGame, 4000);
+
+	}
+
+	//footerContent();
+}
+
+
+function fromLoadToTitle() {
+document.getElementsByTagName("div")[0].remove();
+document.getElementsByTagName("div")[0].remove();
+
+document.body.innerHTML +=
+
+"<div class=\"titlePage\">"
+  + "<img id=\"title-background\" src=\"images/demo/titleScreen/background.png\" />"
+  + "<img id=\"title-title\" src=\"images/demo/titleScreen/logo_simple_rpg.png\" />"
+  + "<img id=\"title-start\" src=\"images/demo/titleScreen/start_button.png\" onclick=transitionToGame() />"
+  + "<img id=\"title-options\" src=\"images/demo/titleScreen/options.png\" />"
+  + "<img id=\"title-sfx\" src=\"images/demo/titleScreen/sfx.png\" />"
+  + "<img id=\"title-music\" src=\"images/demo/titleScreen/music.png\" />"
+  + "<div class=\"temp\">Demo</div>"
+  + "</div>";
+  
+}
+
+function transitionToGame() {
+  document.getElementsByClassName("temp")[0].className = "titleToGame";
+
+  setTimeout(() => {
+    document.getElementsByTagName("div")[0].remove();
+  }, 1000);
+
+  if (document.body) {
+    setTimeout(showGame, 2500);
+  }
+}
+
+
+/*
++ "<div class=\"titleToGame\"></div>";
+
+function fromLoadToGame() {
+document.getElementsByTagName("div")[0].remove();
+document.getElementsByTagName("div")[0].remove();
+}
+*/
+
+function showGame() {
+document.body.innerHTML += 
+
+"<div class=\"loadGame\"></div>"
+
++ "<ul class=\"nav nav-tabs\">"
+  + "<li role=\"presentation\" class=\"active\"><a href=\"index.html\" target=\"_blank\">Game</a></li>"
+  + "<li role=\"presentation\"><a href=\"help.html\" target=\"_blank\">Help</a></li>"
+  + "<li role=\"presentation\"><a href=\"log.html\" target=\"_blank\">Log</a></li>"
+  + "<li role=\"presentation\"><a href=\"game/index.html\" target=\"_blank\">Game (v0.5)</a></li>"
+  + "<li role=\"presentation\"><a href=\"index-demo.html\" target=\"_blank\">DEMO</a></li>"
++"</ul>"
+
++ "<!-- Left side of the screen -->"
++ "<div id=\"left\" class=\"col-sm-2\">"
+  + "<button id=\"start\" style=\"float:left;\">SimpleRPG</button>"
+  + "<div id=\"char\"></div>"
+  + "<br><br>"
+  + "<span id=\"changeClasses\"></span>"
+  + "<br><button id=\"choiceA\"></button><br>"
+  + "<button id=\"choiceB\"></button><br>"
+  + "<button id=\"choiceC\"></button>"
+  + "<hr>"
+  + "<div id=\"menu\">"
+  + "<button id=\"fight\">Go Fight</button>"
+  + "<button id=\"reInc\">Reincarnate</button>"
+  + "</div>"
+  + "<div id=\"ImgToggler\">"
+  + "<br />"
+  + "<button id=\"resize\">Resize Images</button>"
+  + "</div>"
++ "</div>"
+			
++ "<!-- Middle side -->"
++ "<div id=\"middle\" class=\"col-sm-8\">"
+  + "<div class=\"row\">"
+  + "<!-- <img id=\"title\" src=\"images/simplerpg.png\"> -->"
+  + "<!-- player avatar -->"
+  + "<div id=\"pAvatar\" class=\"col-sm-6\">"
+  + "<img id=\"pImage\" src=\"\" alt=\"Player Avatar\"> "
+  + "<p id=\"imgSrc\">Source: &nbsp;</p>"
+  + "</div>"
+  + "<!-- enemy avatar -->"
+  + "<div id=\"eAvatar\" class=\"col-sm-6\">"
+  + "<img id=\"eImage\" src=\"\" alt=\"Enemy Avatar\">"
+  + "<p id=\"eImgSrc\">Source: &nbsp;</p>"
+  + "</div>"
+  + "</div>"
+  + "<div class=\"row\">"
+  + "<!-- Combat stats -->"
+  + "<div id=\"combat\" class=\"col-sm-12\">"
+  + "</div>"
+  + "</div>"
+
+  + "<div class=\"row\">"
+  + "<br>"
+  + "<div id=\"combatOptions\">"
+  + "<button id=\"atk\">Attack</button>"
+  + "<div id=\"skillSelection\"></div>"
+  + "<div id=\"skillDesc\">&nbsp;</div>"
+  + "</div>"
+
+  + "</div>"
+  + "<div class=\"row\" id=\"bottom\">"
+  + "<!-- combat log -->"
+  + "<div id=\"combatInfo\" class=\"col-sm-9\"></div>"
+  + "<div id=\"tempSkill\" class=\"col-sm-3\"></div>"
+  + "</div>"
+  + "</div>"
+  + "<!-- right side -->"
+  + "<div id=\"right\" class=\"col-sm-2\">"
+  + "<div class=\"col-sm-12\">"
+  + "<div id=\"summon1\"></div>"
+  + "</div>"
+  + "</div>";
+
+//footerContent();
+
+setTimeout(() => {
+    document.getElementsByTagName("div")[0].remove();
+  }, 1000);
+
+loadContent();
+}
+
+
+loadingScreen();
+
+function loadContent() {
+
 var startButton = document.getElementById("start");
 var chars = document.getElementById("char");
 var changeClasses = document.getElementById("changeClasses");
@@ -182,7 +347,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You clobbered your opponent for ";
 			banditSkillSet(player);
 			
-			pImage.src = "images/player/base/banditClass.jpg";
+			pImage.src = "images/demo/player/base/bandit_portrait.png";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -200,7 +365,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You pinged your opponent for ";
 			apprenticeSkillSet(player);
 			
-			pImage.src = "images/player/base/apprenticeClass.jpg";
+			pImage.src = "images/player/base/apprentice_portrait.png";
 			pImage.style.width = "450px";
 			pImage.style.height = "350px";
 			pImage.style.position = "absolute";
@@ -218,7 +383,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You slashed your opponent for ";
 			knightSkillSet(player);
 			
-			pImage.src = "images/player/base/knightClass.jpg";
+			pImage.src = "images/player/base/knight_portrait.png";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -251,7 +416,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You smashed your opponent for ";
 			banditSkillSet(player);
 			maniacSkillSet(player);
-			pImage.src = "images/player/rank1/maniacClass.jpg";
+			// pImage.src = "images/player/rank1/maniacClass.jpg";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -269,7 +434,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You smacked your opponent for ";
 			banditSkillSet(player);
 			mercenarySkillSet(player);
-			pImage.src = "images/player/rank1/mercenaryClass.jpg";
+			// pImage.src = "images/player/rank1/mercenaryClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "375px";
 			pImage.style.position = "absolute";
@@ -287,7 +452,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You kicked your opponent for ";
 			banditSkillSet(player);
 			martialArtistSkillSet(player);
-			pImage.src = "images/player/rank1/martialArtistClass.jpg";
+			// pImage.src = "images/player/rank1/martialArtistClass.jpg";
 			pImage.style.width = "400px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -305,7 +470,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You bolted your opponent for ";
 			apprenticeSkillSet(player);
 			scholarSkillSet(player);
-			pImage.src = "images/player/rank1/scholarClass.jpg";
+			// pImage.src = "images/player/rank1/scholarClass.jpg";
 			pImage.style.width = "375px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -323,7 +488,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You engulfed your opponent in darkness for ";
 			apprenticeSkillSet(player);
 			darkMageSkillSet(player);
-			pImage.src = "images/player/rank1/darkMageClass.jpg";
+			// pImage.src = "images/player/rank1/darkMageClass.jpg";
 			pImage.style.width = "350px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -341,7 +506,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You prayed to hurt your opponent for ";
 			apprenticeSkillSet(player);
 			clericSkillSet(player);
-			pImage.src = "images/player/rank1/clericClass.jpg";
+			// pImage.src = "images/player/rank1/clericClass.jpg";
 			pImage.style.width = "350px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -359,7 +524,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You bashed your opponent for ";
 			knightSkillSet(player);
 			heavyKnightSkillSet(player);
-			pImage.src = "images/player/rank1/heavyKnightClass.jpg";
+			// pImage.src = "images/player/rank1/heavyKnightClass.jpg";
 			pImage.style.width = "425px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -377,7 +542,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You sliced your opponent for ";
 			knightSkillSet(player);
 			samuraiSkillSet(player);
-			pImage.src = "images/player/rank1/samuraiClass.jpg";
+			// pImage.src = "images/player/rank1/samuraiClass.jpg";
 			pImage.style.width = "425px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -395,7 +560,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You charged your opponent for ";
 			knightSkillSet(player);
 			cavalierSkillSet(player);
-			pImage.src = "images/player/rank1/cavalierClass.jpg";
+			// pImage.src = "images/player/rank1/cavalierClass.jpg";
 			pImage.style.width = "425px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -427,7 +592,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You smashed your opponent while yelling nonsense for ";
 			banditSkillSet(player);
 			maniacSkillSet(player);
-			pImage.src = "images/player/rank2/psychoClass.jpg";
+			// pImage.src = "images/player/rank2/psychoClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "375px";
 			pImage.style.position = "absolute";
@@ -445,7 +610,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You hit your opponent for ";
 			banditSkillSet(player);
 			maniacSkillSet(player);
-			pImage.src = "images/player/rank2/barbarianClass.jpg";
+			// pImage.src = "images/player/rank2/barbarianClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -463,7 +628,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You struck your opponent with precision for ";
 			banditSkillSet(player);
 			mercenarySkillSet(player);
-			pImage.src = "images/player/rank2/duelistClass.jpg";
+			// pImage.src = "images/player/rank2/duelistClass.jpg";
 			pImage.style.width = "350px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -481,7 +646,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You charged your opponent with ferocity for ";
 			banditSkillSet(player);
 			mercenarySkillSet(player);
-			pImage.src = "images/player/rank2/valiantClass.jpg";
+			// pImage.src = "images/player/rank2/valiantClass.jpg";
 			pImage.style.width = "350px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -499,7 +664,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You punched your opponent too hard for ";
 			banditSkillSet(player);
 			martialArtistSkillSet(player);
-			pImage.src = "images/player/rank2/streetVeteranClass.jpg";
+			// pImage.src = "images/player/rank2/streetVeteranClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -517,7 +682,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You roundhoused your opponent for ";
 			banditSkillSet(player);
 			martialArtistSkillSet(player);
-			pImage.src = "images/player/rank2/blackBeltClass.jpg";
+			// pImage.src = "images/player/rank2/blackBeltClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "375px";
 			pImage.style.position = "absolute";
@@ -535,13 +700,13 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You charged a spell and blasted your opponent for ";
 			apprenticeSkillSet(player);
 			scholarSkillSet(player);
-			pImage.src = "images/player/rank2/mysticClass.jpg";
+			// pImage.src = "images/player/rank2/mysticClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "375px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
 			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/245657354653998316/\" target=\"_blank\">WotC</a>";
-		} else if (this.uClass == rank2Classes[7]) { // Sorceror (+matk +mdef +mp -matk)
+		} else if (this.uClass == rank2Classes[7]) { // Sorcerer (+matk +mdef +mp -matk)
 			this.hp = (200 * this.level) + (20 * this.hpStat) + (20 * this.hpRe);
 			this.mp = (50 * this.level) + (20 * this.mpStat) + (20 * this.mpRe);
 			this.atk = (8 * this.level) - (2 * this.level) + (this.atkStat) + (this.atkRe);
@@ -553,7 +718,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You casted a spell, crashing at your opponent for ";
 			apprenticeSkillSet(player);
 			scholarSkillSet(player);
-			pImage.src = "images/player/rank2/sorcererClass.jpg";
+			// pImage.src = "images/player/rank2/sorcererClass.jpg";
 			pImage.style.width = "400px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -571,7 +736,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "Your opponent couldn't see you blast them for ";
 			apprenticeSkillSet(player);
 			darkMageSkillSet(player);
-			pImage.src = "images/player/rank2/nightMageClass.jpg";
+			// pImage.src = "images/player/rank2/nightMageClass.jpg";
 			pImage.style.width = "350px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -589,7 +754,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You sapped away your opponent's life force for ";
 			apprenticeSkillSet(player);
 			darkMageSkillSet(player);
-			pImage.src = "images/player/rank2/bloodMageClass.jpg";
+			// pImage.src = "images/player/rank2/bloodMageClass.jpg";
 			pImage.style.width = "425px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -607,7 +772,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You peacefully hit your opponent with words for ";
 			apprenticeSkillSet(player);
 			clericSkillSet(player);
-			pImage.src = "images/player/rank2/acolyteClass.jpg";
+			// pImage.src = "images/player/rank2/acolyteClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -625,7 +790,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You angrily hit your opponent with words for ";
 			apprenticeSkillSet(player);
 			clericSkillSet(player);
-			pImage.src = "images/player/rank2/unholyMageClass.jpg";
+			// pImage.src = "images/player/rank2/unholyMageClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -643,7 +808,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "Your opponent physically hit you and unknowingly hurt themself for ";
 			knightSkillSet(player);
 			heavyKnightSkillSet(player);
-			pImage.src = "images/player/rank2/heavyTankClass.jpg";
+			// pImage.src = "images/player/rank2/heavyTankClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -661,7 +826,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "Decrepit hands from below swing at your opponent for ";
 			knightSkillSet(player);
 			heavyKnightSkillSet(player);
-			pImage.src = "images/player/rank2/hellKnightClass.jpg";
+			// pImage.src = "images/player/rank2/hellKnightClass.jpg";
 			pImage.style.width = "375px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -679,7 +844,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You swiftly striked your opponent for ";
 			knightSkillSet(player);
 			samuraiSkillSet(player);
-			pImage.src = "images/player/rank2/adeptRoninClass.jpg";
+			// pImage.src = "images/player/rank2/adeptRoninClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -697,7 +862,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You hit your opponent before they noticed for ";
 			knightSkillSet(player);
 			samuraiSkillSet(player);
-			pImage.src = "images/player/rank2/assassinClass.jpg";
+			// pImage.src = "images/player/rank2/assassinClass.jpg";
 			pImage.style.width = "375px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -715,7 +880,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You majestically charged your opponent for ";
 			knightSkillSet(player);
 			cavalierSkillSet(player);
-			pImage.src = "images/player/rank2/paladinRiderClass.jpg";
+			// pImage.src = "images/player/rank2/paladinRiderClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -733,7 +898,7 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "Your beast chomped at your opponent for ";
 			knightSkillSet(player);
 			cavalierSkillSet(player);
-			pImage.src = "images/player/rank2/beastRiderClass.jpg";
+			// pImage.src = "images/player/rank2/beastRiderClass.jpg";
 			pImage.style.width = "450px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
@@ -4757,4 +4922,5 @@ function transformSkills() {
 	*/
 	
 	//updateChars();
+}
 }
