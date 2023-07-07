@@ -352,7 +352,6 @@ Player.prototype.levelUp = function() {
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
-			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/403635185335212880/\" target=\"_blank\">Zhang Bo</a>";
 		} else if (this.uClass == baseClasses[1]) { // Apprentice Class (+matk +mp -atk -def)
 			this.hp = (90 * this.level) + (10 * this.hpStat) + (10 * this.hpRe);
 			this.mp = (15 * this.level) + (10 * this.mpStat) + (10 * this.mpRe);
@@ -365,12 +364,11 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You pinged your opponent for ";
 			apprenticeSkillSet(player);
 			
-			pImage.src = "images/player/base/apprentice_portrait.png";
+			pImage.src = "images/demo/player/base/Apprentice_Portrait.png";
 			pImage.style.width = "450px";
 			pImage.style.height = "350px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
-			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/403635185335212880/\" target=\"_blank\">klee42</a>";
 		} else if (this.uClass == baseClasses[2]) { // Knight Class (+hp +def -matk -spd)
 			this.hp = (120 * this.level) + (20 * this.hpStat) + (10 * this.hpRe);
 			this.mp = (10 * this.level) + (5 * this.mpStat) + (5 * this.mpRe);
@@ -383,13 +381,12 @@ Player.prototype.levelUp = function() {
 			this.atkmsg = "You slashed your opponent for ";
 			knightSkillSet(player);
 			
-			pImage.src = "images/player/base/knight_portrait.png";
+			pImage.src = "images/demo/player/base/knight_portrait.png";
 			pImage.style.width = "325px";
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
-			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/mordragos/knights/\" target=\"_blank\">Vladimir Buchyk</a>";
-		} else { // Just in case
+		} else { // default
 			this.hp = (100 * this.level) + (10 * this.hpStat) + (10 * this.hpRe);
 			this.mp = (10 * this.level) + (5 * this.mpStat) + (5 * this.mpRe);
 			this.atk = (3 * this.level) + (0 * this.level) + (this.atkStat) + (this.atkRe);
