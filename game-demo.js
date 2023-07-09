@@ -2780,12 +2780,12 @@ summonGrunt.desc = "You yell the signal to summon Peps, the Ace Grunt. (MP: " + 
 summonGrunt.atkMessage = "You summoned a grunt into battle!";
 //console.log(summonGrunt);
 
-// flameBomb skill
-var flameBomb = new Skill("FlameBomb", "active");
-flameBomb.mpCost = 110;
-flameBomb.desc = "Channels a huge fireball before launching it at the enemy. Deals bonus magic damage. (MP: " + flameBomb.mpCost + ")";
-flameBomb.atkMessage = "You launch a giant exploding fireball at the enemy dealing ";
-//console.log(flameBomb);
+// Giant Toss skill
+var giantToss = new Skill("GiantToss", "active");
+giantToss.mpCost = 110;
+giantToss.desc = "You are tossed a boulder or tree to hurl at the enemy. Deals bonus magic damage. (MP: " + giantToss.mpCost + ")";
+giantToss.atkMessage = "You launch a giant " + (Math.floor(Math.random(2)) == 0 ? "boulder" : "tree") + " at the enemy dealing ";
+//console.log(giantToss);
 
 // maniacalLaugh skill
 var maniacalLaugh = new Skill("ManiacalLaugh", "temp");
@@ -2812,8 +2812,8 @@ function maniacSkillSet(player) {
 	// summonGrunt
 	summonGrunt.damage = Math.floor(Math.random() * (summonGrunt.atk/4)) + Math.round(summonGrunt.atk * 1.3);
 	
-	// flameBomb
-	flameBomb.damage = Math.floor((player.atk/3) + Math.round(player.atk * 1.5) + Math.round(player.matk * 1.1));
+	// giantToss
+	giantToss.damage = Math.floor((player.atk/3) + Math.round(player.atk * 1.5) + Math.round(player.matk * 1.1));
 	
 	// maniacalLaugh
 	maniacalLaugh.incStat[0] = 15 * Math.floor(player.level/10);
@@ -2890,15 +2890,15 @@ function maniacSkillSet(player) {
 		summonGrunt.skillActivated = true;
 	} // end summonGrunt
 	
-	// unlock flameBomb skill
-	if (player.level >= 26 && flameBomb.skillActivated == false) { 
-		combatInfo.innerHTML += "<br><strong style=\"color: orange; font-size: 16px;\">Skill Unlocked:</strong> " + flameBomb.skillName;
-		//console.log(flameBomb);
-		player.skillSet.push(flameBomb);
+	// unlock giantToss skill
+	if (player.level >= 26 && giantToss.skillActivated == false) { 
+		combatInfo.innerHTML += "<br><strong style=\"color: orange; font-size: 16px;\">Skill Unlocked:</strong> " + giantToss.skillName;
+		//console.log(giantToss);
+		player.skillSet.push(giantToss);
 		//console.log("player.skillSet: " + player.skillSet + player.skillSet.length);
-		//console.log(flameBomb.skillActivated);
-		flameBomb.skillActivated = true;
-	} // end flameBomb
+		//console.log(giantToss.skillActivated);
+		giantToss.skillActivated = true;
+	} // end giantToss
 	
 	// unlock maniacalLaugh
 	if (player.level >= 28 && maniacalLaugh.skillActivated == false) {
