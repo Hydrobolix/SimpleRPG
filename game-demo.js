@@ -2783,8 +2783,8 @@ summonGrunt.atkMessage = "You summoned a grunt into battle!";
 // Giant Toss skill
 var giantToss = new Skill("GiantToss", "active");
 giantToss.mpCost = 110;
-giantToss.desc = "You are tossed a boulder or tree to hurl at the enemy. Deals bonus magic damage. (MP: " + giantToss.mpCost + ")";
-giantToss.atkMessage = "You launch a giant " + (Math.floor(Math.random(2)) == 0 ? "boulder" : "tree") + " at the enemy dealing ";
+giantToss.desc = "You are tossed a boulder to hurl at the enemy. Deals bonus magic damage. (MP: " + giantToss.mpCost + ")";
+giantToss.atkMessage = "You launch a giant boulder at the enemy dealing ";
 //console.log(giantToss);
 
 // maniacalLaugh skill
