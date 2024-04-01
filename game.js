@@ -4758,3 +4758,8 @@ function transformSkills() {
 	
 	//updateChars();
 }
+
+// Adept Ronin > *-Daimyo
+// -> *-Daimyo summons randomly from a fixed set
+// [**] -> Shogunate's HQ, accept missions for adventure mode
+// [**] -> *-Daimyo can send Daimyo summons on missions, reducing summon from set during duration
