@@ -205,7 +205,7 @@ Player.prototype.levelUp = function() {
 			pImage.style.height = "350px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
-			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/403635185335212880/\" target=\"_blank\">klee42</a>";
+			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/558939003739345990/\" target=\"_blank\">Drew Mierzejewski</a>";
 		} else if (this.uClass == baseClasses[2]) { // Knight Class (+hp +def -matk -spd)
 			this.hp = (120 * this.level) + (20 * this.hpStat) + (10 * this.hpRe);
 			this.mp = (10 * this.level) + (5 * this.mpStat) + (5 * this.mpRe);
@@ -223,7 +223,7 @@ Player.prototype.levelUp = function() {
 			pImage.style.height = "400px";
 			pImage.style.position = "absolute";
 			pImage.style.bottom = "0";
-			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/mordragos/knights/\" target=\"_blank\">Vladimir Buchyk</a>";
+			imgSrc.innerHTML = "Source: <a href=\"https://www.pinterest.com/pin/1125968641693322/\" target=\"_blank\">Vladimir Buchyk</a>";
 		} else { // Just in case
 			this.hp = (100 * this.level) + (10 * this.hpStat) + (10 * this.hpRe);
 			this.mp = (10 * this.level) + (5 * this.mpStat) + (5 * this.mpRe);
